@@ -4,9 +4,9 @@ const button = document.querySelector("#btn")
 
 button.addEventListener("click", function(){
     let valorAtual = parseInt(valor.value);
-    let resultado = valorAtual * 5;
+    let resultado = valorAtual / 5;
 
-    display.value = resultado;
+    display.value = parseInt(resultado);
 })
 
 const dark = document.querySelector('#toggle');
