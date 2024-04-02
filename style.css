@@ -1,0 +1,126 @@
+@charset "utf-8";
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+:root{
+    --cor1: #1c0b2b;
+    --cor2: #301c41;
+    --cor3: #413b6b;
+    --cor4: #5c65c0;
+    --cor5: #6f95ff;
+    --cor6: #6a6996;
+    --cor7: #8f8fb0;
+    --cor8: #b4b4cb;
+    --cor9: #dadae5;
+    --cor10: #eee;
+}
+header{
+    width: 100%;
+    height: 10vh;
+    background-color: var(--cor9);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.3em;
+    padding-inline: 30px;
+    color: var(--cor2);
+}
+.toggle-label{
+    border: solid 1px var(--cor1);
+    width: 60px;
+    height: 30px;
+    border-radius: 15px;
+    cursor: pointer;
+    position: relative;
+}
+
+.toggle-label::before{
+    content: "";
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    transition: ease .3s;
+    background-image: url(img/sol.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.toggle-btn:checked + .toggle-label::before{
+    background-image: url(img/lua.png);
+    transform: translateX(30px);
+}
+.toggle-btn{
+    display: none;
+}
+main{
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--cor10);
+}
+form{
+    width: 340px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column; 
+    background: linear-gradient( var(--cor8), var(--cor9) );
+    box-shadow: 3px 3px 5px var(--cor6);
+}
+label{
+    margin-bottom: 10px;
+    border-bottom: 2px solid var(--cor5);
+    width: fit-content;
+    font-weight: 600;
+}
+input{
+    margin-bottom: 20px;
+    padding: 10px;
+    border: solid 2px var(--cor4);
+    background-color: var(--cor10);
+}
+button{
+    margin-bottom: 20px;
+    padding: 10px;
+    border: solid 2px var(--cor4);
+    cursor: pointer;
+    font-weight: 800;
+    color: var(--cor4);
+    transition: ease .4s;
+}
+button:hover{
+    background-color: var(--cor4);
+    color: var(--cor10);
+    transition: ease .4s;
+}
+footer{
+    height: 10vh;
+    text-align: center;
+    font-size: 1.1em;
+    background-color: var(--cor9);
+    padding-block: 20px;
+    color: var(--cor2);
+}
+
+.dark-mode main{
+    background-color: var(--cor1);
+}
+.dark-mode header{
+    background-color: var(--cor2);
+    color: var(--cor9);
+}
+.dark-mode footer{
+    background-color: var(--cor2);
+    color: var(--cor9);
+}
+.dark-mode label{
+    color: var(--cor9);
+}
+.dark-mode form{
+    background: linear-gradient(var(--cor3), var(--cor5));
+}
